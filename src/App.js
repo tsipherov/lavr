@@ -28,6 +28,12 @@ class App extends React.Component {
     let cnt = Math.max(Math.min(newCnt, this.props.max), this.props.min);
     this.setState({ cnt });
   }
+
+  setValue(newStr){
+    let cnt = parseInt(newStr);
+    this.set(isNaN(cnt) ? this.props.min : cnt);
+  }
+  
   styles = {
     display: "flex",
     alignItems: "center",
@@ -35,22 +41,6 @@ class App extends React.Component {
     justifyContent: "space-around",
     fontSize: 30
   }
-
-  // state = {
-  //   cnt: this.props.min
-  // }
-
-  // increase = () => {
-  //   this.setState({
-  //     cnt: this.state.cnt + 1
-  //   })
-  // }
-
-  // decrease = () => {
-  //   this.setState({
-  //     cnt: this.state.cnt - 1
-  //   })
-  // }
 
   render() {
 
@@ -75,7 +65,11 @@ class App extends React.Component {
             >
               +1
         </button>
-          </div>
+            </div>
+            <br />
+            <input value={this.state.cnt} 
+                       onChange={(e) => this.setValue(e.target.value)} 
+            />
         </header>
       </div>
     );
