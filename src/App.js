@@ -1,27 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import propTypes from "prop-types";
 
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends React.Component {
-
   static propTypes = {
-    min: PropTypes.number.isRequired,
-    max: PropTypes.number.isRequired
-  }
+    min: propTypes.number.isRequired,
+    max: propTypes.number.isRequired,
+  };
 
   state = {
-    cnt: this.props.min
+    cnt: this.props.min,
   };
 
   increase = () => {
     this.set(this.state.cnt + 1);
-  }
+  };
 
   decrease = () => {
     this.set(this.state.cnt - 1);
-  }
+  };
 
   set(newCnt) {
     // let cnt = Math.min(Math.max(newCnt, this.props.min), this.props.max);
@@ -33,48 +32,23 @@ class App extends React.Component {
     alignItems: "center",
     width: 150,
     justifyContent: "space-around",
-    fontSize: 30
-  }
-
-  // state = {
-  //   cnt: this.props.min
-  // }
-
-  // increase = () => {
-  //   this.setState({
-  //     cnt: this.state.cnt + 1
-  //   })
-  // }
-
-  // decrease = () => {
-  //   this.setState({
-  //     cnt: this.state.cnt - 1
-  //   })
-  // }
+    fontSize: 30,
+  };
 
   render() {
-
     return (
-      <div className="App" >
+      <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <br />
           <div style={this.styles}>
-            <button
-              className="App-link"
-              onClick={this.decrease}
-            >
+            <button className="App-link" onClick={this.decrease}>
               -1
             </button>
-            <p>
-              {this.state.cnt}
-            </p>
-            <button
-              className="App-link"
-              onClick={this.increase}
-            >
+            <p>{this.state.cnt}</p>
+            <button className="App-link" onClick={this.increase}>
               +1
-        </button>
+            </button>
           </div>
         </header>
       </div>
