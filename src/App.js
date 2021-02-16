@@ -1,30 +1,18 @@
 import React from "react";
-<<<<<<< HEAD
-import propTypes from "prop-types";
-=======
 import PropTypes from "prop-types";
->>>>>>> 56ad2c2d4b591c621c7866c19df2f0d802834272
 
 import logo from "./logo.svg";
 import "./App.css";
 
 class App extends React.Component {
   static propTypes = {
-<<<<<<< HEAD
-    min: propTypes.number.isRequired,
-    max: propTypes.number.isRequired,
-=======
     min: PropTypes.number.isRequired,
     max: PropTypes.number.isRequired,
->>>>>>> 56ad2c2d4b591c621c7866c19df2f0d802834272
   };
 
   state = {
     cnt: this.props.min,
-<<<<<<< HEAD
-=======
     inputValue: this.props.min,
->>>>>>> 56ad2c2d4b591c621c7866c19df2f0d802834272
   };
 
   increase = () => {
